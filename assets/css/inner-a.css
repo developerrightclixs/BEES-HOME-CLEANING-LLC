@@ -7,7 +7,7 @@
 /* ---------- Page hero helpers ---------- */
 .page-hero-panel .display { max-width: 640px; }
 .page-hero-panel .page-hero-img { aspect-ratio: 1 / 1; max-width: 460px; margin-left: auto; }
-.page-hero-img.cutout { background: var(--brand-ice); display: flex; align-items: flex-end; justify-content: center; }
+.page-hero-img.cutout { background: var(--brand-ice); display: flex; align-items: flex-end; justify-content: center; padding-top: 24px; }
 .page-hero-img.cutout img { width: auto; height: 100%; max-width: 100%; object-fit: contain; object-position: bottom; }
 .page-hero-media { position: relative; }
 .page-hero-media .tag-float { position: absolute; z-index: 2; }

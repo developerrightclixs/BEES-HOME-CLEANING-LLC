@@ -195,7 +195,7 @@
 .bk-wallet-note { background: var(--surface-200); border-radius: var(--radius-sm); padding: 14px 16px; }
 
 /* Summary */
-.bk-summary { background: var(--surface-200); border-radius: var(--radius-lg); padding: 28px 24px; position: sticky; top: calc(var(--header-h) + 24px); }
+.bk-summary { background: var(--surface-200); border-radius: var(--radius-lg); padding: 28px 24px; position: -webkit-sticky; position: sticky; top: calc(var(--header-h) + 24px); z-index: 2; }
 .bk-srow { display: flex; justify-content: space-between; gap: 16px; padding: 7px 0; font-size: 16px; }
 .bk-srow span { color: var(--ink-muted); white-space: nowrap; }
 .bk-srow strong { font-weight: 500; text-align: right; }
@@ -243,6 +243,7 @@
     background: #fff; border-top: 1px solid var(--border); box-shadow: 0 -8px 24px rgba(14, 47, 62, .08);
   }
   .bk-mobilebar.gone { display: none; }
+  body:has(.bk-mobilebar:not(.gone)) .site-footer { padding-bottom: 84px; }
   .bk-mobilebar span { display: block; font-size: 14px; color: var(--ink-muted); }
   .bk-mobilebar strong { font-size: 26px; font-weight: 500; line-height: 1.1; }
   body.has-bk-bar { padding-bottom: 92px; }

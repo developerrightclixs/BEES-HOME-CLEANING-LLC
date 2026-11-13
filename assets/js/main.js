@@ -142,6 +142,22 @@
     });
   });
 
+  /* ---------- Footer wordmark: always fit the container width ---------- */
+  document.querySelectorAll(".f-wordmark").forEach(function (wm) {
+    if (!wm.querySelector("span")) wm.innerHTML = "<span>" + wm.textContent + "</span>";
+    var inner = wm.querySelector("span");
+    function fit() {
+      wm.style.fontSize = "";
+      var max = parseFloat(getComputedStyle(wm).fontSize);
+      var avail = wm.clientWidth;
+      var w = inner.getBoundingClientRect().width;
+      if (w > avail && w > 0) wm.style.fontSize = Math.floor(max * avail / w * 0.98) + "px";
+    }
+    fit();
+    window.addEventListener("resize", fit);
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(fit);
+  });
+
   /* ---------- Footer year ---------- */
   document.querySelectorAll("[data-year]").forEach(function (el) { el.textContent = new Date().getFullYear(); });
 })();
