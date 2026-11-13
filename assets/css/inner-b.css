@@ -243,7 +243,6 @@
     background: #fff; border-top: 1px solid var(--border); box-shadow: 0 -8px 24px rgba(14, 47, 62, .08);
   }
   .bk-mobilebar.gone { display: none; }
-  body:has(.bk-mobilebar:not(.gone)) .site-footer { padding-bottom: 84px; }
   .bk-mobilebar span { display: block; font-size: 14px; color: var(--ink-muted); }
   .bk-mobilebar strong { font-size: 26px; font-weight: 500; line-height: 1.1; }
   body.has-bk-bar { padding-bottom: 92px; }

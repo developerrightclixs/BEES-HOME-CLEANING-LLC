@@ -21,6 +21,7 @@
 
   /* ---------- Active nav link ---------- */
   var page = (location.pathname.split("/").pop() || "index.html").toLowerCase();
+  if (/^blog-.+\.html$/.test(page)) page = "blog.html"; // blog detail pages highlight "Blog"
   document.querySelectorAll(".site-header [data-page]").forEach(function (el) {
     var pages = el.getAttribute("data-page").split(",");
     if (pages.indexOf(page) !== -1) {
@@ -154,10 +155,12 @@
           '<form data-demo-form novalidate>' +
             '<div class="selected-pill mb-4"><i class="bi bi-patch-check-fill"></i><div><span>You’ve selected</span><strong data-plan-label>—</strong></div></div>' +
             '<input type="hidden" name="membership" data-plan-input>' +
-            '<div class="mb-3"><label class="form-label" for="mmName">Name</label><input class="form-control" id="mmName" name="name" type="text" placeholder="Your name" autocomplete="name" required><div class="invalid-feedback">Please enter your name.</div></div>' +
-            '<div class="mb-3"><label class="form-label" for="mmEmail">Email</label><input class="form-control" id="mmEmail" name="email" type="email" placeholder="name@example.com" autocomplete="email" required><div class="invalid-feedback">Please enter a valid email.</div></div>' +
-            '<div class="mb-3"><label class="form-label" for="mmPhone">Phone number</label><input class="form-control" id="mmPhone" name="phone" type="tel" placeholder="(555) 555-5555" autocomplete="tel" required><div class="invalid-feedback">Please enter your phone number.</div></div>' +
-            '<div class="mb-4"><label class="form-label" for="mmPlan">Membership plan</label><input class="form-control" id="mmPlan" type="text" readonly data-plan-field></div>' +
+            '<div class="row g-3 mb-4">' +
+            '<div class="col-md-6"><label class="form-label" for="mmName">Name</label><input class="form-control" id="mmName" name="name" type="text" placeholder="Your name" autocomplete="name" required><div class="invalid-feedback">Please enter your name.</div></div>' +
+            '<div class="col-md-6"><label class="form-label" for="mmEmail">Email</label><input class="form-control" id="mmEmail" name="email" type="email" placeholder="name@example.com" autocomplete="email" required><div class="invalid-feedback">Please enter a valid email.</div></div>' +
+            '<div class="col-12"><label class="form-label" for="mmPhone">Phone number</label><input class="form-control" id="mmPhone" name="phone" type="tel" placeholder="(555) 555-5555" autocomplete="tel" required><div class="invalid-feedback">Please enter your phone number.</div></div>' +
+            '<div class="col-12"><label class="form-label" for="mmPlan">Membership plan</label><input class="form-control" id="mmPlan" type="text" readonly data-plan-field></div>' +
+            '</div>' +
             '<button class="btn-bee btn-primary-bee btn-block" type="submit">Subscribe <i class="bi bi-arrow-right"></i></button>' +
             '<div class="form-success"><i class="bi bi-check-circle-fill"></i> Thanks! We’ll call you shortly to confirm your membership.</div>' +
           '</form>' +
