@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Contact | BEES HOME CLEANING LLC-H1</title>
-  <meta name="description" content="Contact Bees Home Cleaning in Sidney, Ohio. Call or text (480) 208-0672, email us or send a message. Open Mon–Sat, 8 AM–6 PM, serving Sidney and nearby towns.">
+  <meta name="description" content="Contact Bees Home Cleaning in Findlay, Ohio. Call or text (480) 208-0672, email us or send a message. Open Mon–Sat, 8 AM–6 PM, serving Findlay and nearby towns.">
   <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,15 +12,15 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/inner-a.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=2">
+  <link rel="stylesheet" href="assets/css/inner-a.css?v=2">
 </head>
 <body>
 
 <!-- ============ TOP BAR (shared) ============ -->
 <div class="topbar">
   <div class="container">
-    <span class="tb-item tb-address"><i class="bi bi-geo-alt-fill"></i> 92 93 Hiegl drive sidney Finley Ohio 45840</span>
+    <span class="tb-item tb-address"><i class="bi bi-geo-alt-fill"></i> 9293 Hiegel Dr, Findlay, Ohio 45840</span>
     <div class="d-flex align-items-center gap-4">
       <span class="tb-item d-none d-sm-inline-flex"><i class="bi bi-patch-check-fill"></i> Bonded &amp; insured</span>
       <a class="tb-item tb-phone" href="tel:+14802080672"><i class="bi bi-telephone-fill"></i> (480) 208-0672</a>
@@ -40,15 +40,8 @@
       <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav mx-auto">
           <li class="nav-item"><a class="nav-link" data-page="index.html" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" data-page="about.html,careers.html" href="about.html">About</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="services.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">Service <i class="bi bi-chevron-down"></i></a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" data-page="services.html" href="services.html">All services</a></li>
-              <li><a class="dropdown-item" data-page="service-detail.html" href="service-detail.html">Steam cleaning</a></li>
-              <li><a class="dropdown-item" data-page="book-appointment.html" href="book-appointment.html">Book appointment</a></li>
-            </ul>
-          </li>
+          <li class="nav-item"><a class="nav-link" data-page="about.html" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" data-page="services.html,book-appointment.html" href="services.html">Service</a></li>
           <li class="nav-item"><a class="nav-link" data-page="gallery.html" href="gallery.html">Gallery</a></li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="pricing.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pricing <i class="bi bi-chevron-down"></i></a>
@@ -78,7 +71,7 @@
             <nav class="breadcrumb-bee" aria-label="Breadcrumb" data-aos="fade-up"><a href="index.html">Home</a><span>/</span><span aria-current="page">Contact</span></nav>
             <span class="eyebrow text-ink" data-aos="fade-up">Contact</span>
             <h1 class="display" data-aos="fade-up" data-aos-delay="100">Let’s talk about your home.</h1>
-            <p class="body-lg" data-aos="fade-up" data-aos-delay="200">Call, text or send a message. A real person from our Sidney team will get back to you, usually the same day.</p>
+            <p class="body-lg" data-aos="fade-up" data-aos-delay="200">Call, text or send a message. A real person from our Findlay team will get back to you, usually the same day.</p>
             <div class="btn-row" data-aos="fade-up" data-aos-delay="300">
               <a class="btn-bee btn-primary-bee" href="tel:+14802080672"><i class="bi bi-telephone-fill"></i> Call (480) 208-0672</a>
               <a class="btn-bee btn-ghost-bee" href="#message">Send a message</a>
@@ -101,14 +94,24 @@
     <div class="container">
       <div class="row g-4 g-lg-5">
         <div class="col-lg-7" data-aos="fade-right">
-          <form class="form-card" data-demo-form novalidate>
+          <form class="form-card" id="contact-form" data-demo-form novalidate>
             <h2 class="h2-bee mb-4">Send us a message</h2>
             <div class="row g-3">
               <div class="col-md-6"><label class="form-label" for="cName">Full name</label><input class="form-control" id="cName" type="text" placeholder="Your name" autocomplete="name" required></div>
               <div class="col-md-6"><label class="form-label" for="cPhone">Phone number</label><input class="form-control" id="cPhone" type="tel" placeholder="(555) 555-5555" autocomplete="tel"></div>
               <div class="col-12"><label class="form-label" for="cEmail">Email</label><input class="form-control" id="cEmail" type="email" placeholder="name@example.com" autocomplete="email" required></div>
-              <div class="col-12"><label class="form-label" for="cService">What can we help with?</label>
-                <select class="form-select" id="cService"><option>Steam cleaning</option><option>Standard home cleaning</option><option>Deep cleaning</option><option>Move-in / Move-out</option><option>Porch &amp; tile cleaning</option><option>Membership</option><option>Something else</option></select></div>
+              <div class="col-12"><label class="form-label" for="cPackage">Package <span class="text-muted-bee fw-normal">(optional)</span></label>
+                <select class="form-select" id="cPackage" name="package">
+                  <option value="">No package — just a question</option>
+                  <option value="Bathroom Refresh Bundle">Bathroom Refresh Bundle — $65</option>
+                  <option value="Whole-Home Steam Bundle">Whole-Home Steam Bundle — $75</option>
+                  <option value="Move-Out Bundle">Move-Out Bundle — $85</option>
+                  <option value="Porch &amp; Patio Bundle">Porch &amp; Patio Bundle — $70</option>
+                  <option value="Spring Deep-Clean Bundle">Spring Deep-Clean Bundle — $95</option>
+                  <option value="Pet-Friendly Carpet Bundle">Pet-Friendly Carpet Bundle — $80</option>
+                </select>
+                <div class="selected-pill mt-3" id="pkgSelectedNote" hidden><i class="bi bi-bag-check-fill"></i><div><span>You’ve selected this package</span><strong>—</strong></div></div>
+              </div>
               <div class="col-12"><label class="form-label" for="cMsg">Message</label><textarea class="form-control" id="cMsg" rows="5" placeholder="Tell us about your home and what you need…" required></textarea></div>
               <div class="col-12">
                 <p class="form-label mb-3">How should we reach you?</p>
@@ -125,7 +128,7 @@
           <a class="info-card" href="tel:+14802080672" data-aos="fade-left"><span class="icon-circle"><i class="bi bi-telephone-fill"></i></span><div><span class="eyebrow">Call or text</span><strong>(480) 208-0672</strong><span>Fastest way to reach us</span></div></a>
           <a class="info-card" href="mailto:e8blangley1972@gmail.com" data-aos="fade-left" data-aos-delay="100"><span class="icon-circle"><i class="bi bi-envelope-fill"></i></span><div><span class="eyebrow">Email</span><strong class="text-break">e8blangley1972@gmail.com</strong><span>We reply within one business day</span></div></a>
           <div class="info-card" data-aos="fade-left" data-aos-delay="200"><span class="icon-circle"><i class="bi bi-clock-fill"></i></span><div><span class="eyebrow">Hours</span><strong>Mon–Sat, 8 AM–6 PM</strong><span>Closed Sundays</span></div></div>
-          <div class="info-card" data-aos="fade-left" data-aos-delay="300"><span class="icon-circle"><i class="bi bi-geo-alt-fill"></i></span><div><span class="eyebrow">Address</span><strong>92 93 Hiegl drive sidney Finley Ohio 45840</strong><span>Serving Sidney and nearby towns</span></div></div>
+          <div class="info-card" data-aos="fade-left" data-aos-delay="300"><span class="icon-circle"><i class="bi bi-geo-alt-fill"></i></span><div><span class="eyebrow">Address</span><strong>9293 Hiegel Dr, Findlay, Ohio 45840</strong><span>Serving Findlay and nearby towns</span></div></div>
           <a class="btn-bee btn-dark-bee btn-block mt-2" href="book-appointment.html" data-aos="fade-up" data-aos-delay="300">Ready to book? Book online <i class="bi bi-arrow-right"></i></a>
         </div>
       </div>
@@ -139,11 +142,11 @@
         <div class="col-lg-7" data-aos="fade-up">
           <span class="eyebrow">Where we clean</span>
           <h2 class="h1-bee">Service area</h2>
-          <p class="body-lg mt-3 mb-0">Sidney, Piqua, Troy, Anna, Botkins, Fort Loramie and nearby towns. Not sure if we cover you? Just ask.</p>
+          <p class="body-lg mt-3 mb-0">Findlay, Piqua, Troy, Anna, Botkins, Fort Loramie and nearby towns. Not sure if we cover you? Just ask.</p>
         </div>
       </div>
       <div class="area-tags" data-aos="fade-up" data-aos-delay="100">
-        <span class="tag tag-white"><i class="bi bi-geo-alt-fill"></i> Sidney</span>
+        <span class="tag tag-white"><i class="bi bi-geo-alt-fill"></i> Findlay</span>
         <span class="tag tag-white"><i class="bi bi-geo-alt"></i> Piqua</span>
         <span class="tag tag-white"><i class="bi bi-geo-alt"></i> Troy</span>
         <span class="tag tag-white"><i class="bi bi-geo-alt"></i> Anna</span>
@@ -151,7 +154,7 @@
         <span class="tag tag-white"><i class="bi bi-geo-alt"></i> Fort Loramie</span>
       </div>
       <div class="map-frame" data-aos="zoom-in" data-aos-delay="150">
-        <iframe title="Map of the Bees Home Cleaning service area around Sidney, Ohio" src="https://www.google.com/maps?q=Sidney,+OH+45840&amp;z=10&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        <iframe title="Map of the Bees Home Cleaning service area around Findlay, Ohio" src="https://www.google.com/maps?q=9293+Hiegel+Dr,+Findlay,+OH+45840&amp;z=13&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
       </div>
     </div>
   </section>
@@ -202,7 +205,7 @@
         <ul>
           <li><a href="services.html#standard">Standard Home Cleaning</a></li>
           <li><a href="services.html#deep">Deep Cleaning</a></li>
-          <li><a href="service-detail.html">Steam Cleaning</a></li>
+          <li><a href="services.html#steam">Steam Cleaning</a></li>
           <li><a href="services.html#move">Move-in / Move-out</a></li>
           <li><a href="services.html#porch">Porch &amp; Tile Cleaning</a></li>
         </ul>
@@ -215,7 +218,6 @@
           <li><a href="membership.html">Membership</a></li>
           <li><a href="gallery.html">Gallery</a></li>
           <li><a href="pricing.html">Pricing</a></li>
-          <li><a href="careers.html">Careers</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="faq.html">FAQ</a></li>
           <li><a href="contact.html">Contact</a></li>
@@ -226,7 +228,7 @@
         <ul>
           <li><a href="tel:+14802080672">(480) 208-0672</a></li>
           <li>Email: <a href="mailto:e8blangley1972@gmail.com">e8blangley1972@gmail.com</a></li>
-          <li>Street address: 92 93 Hiegl drive sidney Finley Ohio 45840</li>
+          <li>Street address: 9293 Hiegel Dr, Findlay, Ohio 45840</li>
           <li>Mon–Sat: 8 AM–6 PM</li>
         </ul>
       </div>
@@ -243,6 +245,6 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script src="assets/js/main.js"></script>
+<script src="assets/js/main.js?v=2"></script>
 </body>
 </html>

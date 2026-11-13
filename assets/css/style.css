@@ -522,3 +522,31 @@ main, .site-footer { overflow-x: clip; }
   *, *::before, *::after { animation: none !important; transition: none !important; }
   html { scroll-behavior: auto; }
 }
+
+/* ---------- Selected plan / package pill ---------- */
+.selected-pill {
+  display: flex; align-items: center; gap: 14px;
+  background: var(--surface-300); border: 1px solid var(--brand-ice);
+  border-radius: var(--radius-md); padding: 14px 18px;
+}
+.selected-pill[hidden] { display: none; }
+.selected-pill > i { font-size: 24px; color: var(--ink); flex-shrink: 0; }
+.selected-pill span { display: block; font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--link); }
+.selected-pill strong { display: block; font-size: 17px; font-weight: 600; color: var(--ink); line-height: 1.35; }
+.form-control[readonly] { background: var(--surface-200); color: var(--ink); cursor: default; }
+.form-control[readonly]:focus { box-shadow: none; border-color: var(--border); }
+
+/* ---------- Membership modal ---------- */
+.bee-modal .modal-dialog { max-width: 520px; padding: 0 8px; }
+.bee-modal .modal-content { border: 0; border-radius: var(--radius-lg); padding: 40px 36px 32px; box-shadow: 0 24px 64px rgba(14, 47, 62, .25); }
+.bee-modal .h1-bee { font-size: clamp(28px, 4vw, 36px); }
+.bee-modal-close {
+  position: absolute; top: 18px; right: 18px; width: 40px; height: 40px; border-radius: 50%;
+  border: 0; background: var(--surface-200); color: var(--ink); display: flex; align-items: center; justify-content: center;
+  transition: background .25s;
+}
+.bee-modal-close:hover { background: var(--accent-yellow); }
+.modal-backdrop.show { opacity: .55; background: var(--surface-deep); }
+.bee-modal.fade .modal-dialog { transform: translateY(24px) scale(.98); transition: transform .3s ease-out; }
+.bee-modal.show .modal-dialog { transform: none; }
+@media (max-width: 575.98px) { .bee-modal .modal-content { padding: 32px 20px 24px; } }

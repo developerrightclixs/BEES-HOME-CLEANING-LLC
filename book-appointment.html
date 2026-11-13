@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Book Appointment | BEES HOME CLEANING LLC-H1</title>
-  <meta name="description" content="Book a home cleaning in Sidney, Ohio in about two minutes. Choose your service, add-ons and arrival time, see a live price and pay securely online.">
+  <meta name="description" content="Book a home cleaning in Findlay, Ohio in about two minutes. Choose your service, add-ons and arrival time, see a live price and pay securely online.">
   <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -12,15 +12,15 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
-  <link rel="stylesheet" href="assets/css/style.css">
-  <link rel="stylesheet" href="assets/css/inner-b.css">
+  <link rel="stylesheet" href="assets/css/style.css?v=2">
+  <link rel="stylesheet" href="assets/css/inner-b.css?v=2">
 </head>
 <body>
 
 <!-- ============ TOP BAR (shared) ============ -->
 <div class="topbar">
   <div class="container">
-    <span class="tb-item tb-address"><i class="bi bi-geo-alt-fill"></i> 92 93 Hiegl drive sidney Finley Ohio 45840</span>
+    <span class="tb-item tb-address"><i class="bi bi-geo-alt-fill"></i> 9293 Hiegel Dr, Findlay, Ohio 45840</span>
     <div class="d-flex align-items-center gap-4">
       <span class="tb-item d-none d-sm-inline-flex"><i class="bi bi-patch-check-fill"></i> Bonded &amp; insured</span>
       <a class="tb-item tb-phone" href="tel:+14802080672"><i class="bi bi-telephone-fill"></i> (480) 208-0672</a>
@@ -40,15 +40,8 @@
       <div class="collapse navbar-collapse" id="mainNav">
         <ul class="navbar-nav mx-auto">
           <li class="nav-item"><a class="nav-link" data-page="index.html" href="index.html">Home</a></li>
-          <li class="nav-item"><a class="nav-link" data-page="about.html,careers.html" href="about.html">About</a></li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="services.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">Service <i class="bi bi-chevron-down"></i></a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" data-page="services.html" href="services.html">All services</a></li>
-              <li><a class="dropdown-item" data-page="service-detail.html" href="service-detail.html">Steam cleaning</a></li>
-              <li><a class="dropdown-item" data-page="book-appointment.html" href="book-appointment.html">Book appointment</a></li>
-            </ul>
-          </li>
+          <li class="nav-item"><a class="nav-link" data-page="about.html" href="about.html">About</a></li>
+          <li class="nav-item"><a class="nav-link" data-page="services.html,book-appointment.html" href="services.html">Service</a></li>
           <li class="nav-item"><a class="nav-link" data-page="gallery.html" href="gallery.html">Gallery</a></li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="pricing.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">Pricing <i class="bi bi-chevron-down"></i></a>
@@ -131,6 +124,7 @@
                   <label class="bk-option"><input type="radio" name="service" value="steam"><span class="icon-circle ice"><i class="bi bi-droplet"></i></span><span class="bk-otext"><strong>Steam Cleaning — Windows, Curtains &amp; Carpets</strong><span>Steam-cleaned and dried before we leave</span><em>From $30 per room</em></span><span class="bk-radio"></span></label>
                   <label class="bk-option"><input type="radio" name="service" value="move"><span class="icon-circle ice"><i class="bi bi-box-seam"></i></span><span class="bk-otext"><strong>Move-in / Move-out</strong><span>Empty-home deep clean for moving day</span><em>From $95</em></span><span class="bk-radio"></span></label>
                   <label class="bk-option"><input type="radio" name="service" value="porch"><span class="icon-circle ice"><i class="bi bi-flower1"></i></span><span class="bk-otext"><strong>Porch &amp; Tile Cleaning</strong><span>Porches, patios, tile and grout</span><em>From $60</em></span><span class="bk-radio"></span></label>
+                  <label class="bk-option"><input type="radio" name="service" value="addons"><span class="icon-circle ice"><i class="bi bi-plus-circle"></i></span><span class="bk-otext"><strong>Add-ons</strong><span>Inside oven, inside fridge, inside cabinets, porch sweep and more</span><em>From $20 per add-on</em></span><span class="bk-radio"></span></label>
                 </div>
                 <div class="bk-error" role="alert"></div>
                 <div class="bk-nav">
@@ -253,7 +247,7 @@
                   <div class="col-md-6"><label class="form-label" for="bkPhone">Phone number</label><input class="form-control" id="bkPhone" name="phone" type="tel" autocomplete="tel" placeholder="(937) 555-0123" required><div class="form-text">We will text you when the team is on the way.</div><div class="invalid-feedback"><i class="bi bi-exclamation-circle"></i> Please enter a 10-digit phone number.</div></div>
                   <div class="col-md-6"><label class="form-label" for="bkEmail">Email</label><input class="form-control" id="bkEmail" name="email" type="email" autocomplete="email" placeholder="name@example.com" required><div class="invalid-feedback"><i class="bi bi-exclamation-circle"></i> Please enter a full email, like name@example.com.</div></div>
                   <div class="col-12"><label class="form-label" for="bkStreet">Street address</label><input class="form-control" id="bkStreet" name="street" type="text" autocomplete="street-address" placeholder="123 Main Street" required><div class="invalid-feedback">Please enter the street address.</div></div>
-                  <div class="col-md-4"><label class="form-label" for="bkCity">City</label><input class="form-control" id="bkCity" name="city" type="text" autocomplete="address-level2" placeholder="Sidney" required><div class="invalid-feedback">Please enter a city.</div></div>
+                  <div class="col-md-4"><label class="form-label" for="bkCity">City</label><input class="form-control" id="bkCity" name="city" type="text" autocomplete="address-level2" placeholder="Findlay" required><div class="invalid-feedback">Please enter a city.</div></div>
                   <div class="col-6 col-md-4"><label class="form-label" for="bkState">State</label><select class="form-select" id="bkState" name="state" required><option value="OH" selected>Ohio</option><option value="IN">Indiana</option></select></div>
                   <div class="col-6 col-md-4"><label class="form-label" for="bkZip">ZIP code</label><input class="form-control" id="bkZip" name="zip" type="text" inputmode="numeric" autocomplete="postal-code" placeholder="45365" maxlength="5" required pattern="\d{5}"><div class="invalid-feedback">5-digit ZIP, please.</div></div>
                   <div class="col-12"><label class="form-label" for="bkNotes">Anything we should know? <span class="fw-normal text-muted-bee">(optional)</span></label><textarea class="form-control" id="bkNotes" name="notes" rows="4" placeholder="Gate code, parking, pets, rooms to skip…"></textarea></div>
@@ -380,7 +374,7 @@
         <ul>
           <li><a href="services.html#standard">Standard Home Cleaning</a></li>
           <li><a href="services.html#deep">Deep Cleaning</a></li>
-          <li><a href="service-detail.html">Steam Cleaning</a></li>
+          <li><a href="services.html#steam">Steam Cleaning</a></li>
           <li><a href="services.html#move">Move-in / Move-out</a></li>
           <li><a href="services.html#porch">Porch &amp; Tile Cleaning</a></li>
         </ul>
@@ -393,7 +387,6 @@
           <li><a href="membership.html">Membership</a></li>
           <li><a href="gallery.html">Gallery</a></li>
           <li><a href="pricing.html">Pricing</a></li>
-          <li><a href="careers.html">Careers</a></li>
           <li><a href="blog.html">Blog</a></li>
           <li><a href="faq.html">FAQ</a></li>
           <li><a href="contact.html">Contact</a></li>
@@ -404,7 +397,7 @@
         <ul>
           <li><a href="tel:+14802080672">(480) 208-0672</a></li>
           <li>Email: <a href="mailto:e8blangley1972@gmail.com">e8blangley1972@gmail.com</a></li>
-          <li>Street address: 92 93 Hiegl drive sidney Finley Ohio 45840</li>
+          <li>Street address: 9293 Hiegel Dr, Findlay, Ohio 45840</li>
           <li>Mon–Sat: 8 AM–6 PM</li>
         </ul>
       </div>
@@ -421,7 +414,7 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script src="assets/js/main.js"></script>
+<script src="assets/js/main.js?v=2"></script>
 <script>
 /* Booking flow — front-end only (no backend). */
 (function () {
@@ -432,9 +425,10 @@
   var SERVICES = {
     standard: { name: "Standard Home Cleaning", short: "Standard Cleaning", base: 95, bed: 15, bath: 10, sized: true, hours: "Most standard cleans take 2–3 hours." },
     deep:     { name: "Deep Cleaning", short: "Deep Cleaning", base: 150, bed: 25, bath: 20, sized: true, hours: "Deep cleans take about 4–5 hours." },
-    steam:    { name: "Steam Cleaning — Windows, Curtains & Carpets", short: "Steam Cleaning", base: 0, min: 60, bed: 0, bath: 0, sized: false, hours: "Steam jobs take about 3–4 hours including dry-out." },
+    steam:    { name: "Steam Cleaning — Windows, Curtains & Carpets", short: "Steam Cleaning", base: 0, from: 30, bed: 0, bath: 0, sized: false, hours: "Steam jobs take about 3–4 hours including dry-out." },
     move:     { name: "Move-in / Move-out", short: "Move-in / Move-out", base: 95, bed: 20, bath: 15, sized: true, hours: "Move-in / move-out cleans take about 4–6 hours." },
-    porch:    { name: "Porch & Tile Cleaning", short: "Porch & Tile", base: 60, bed: 0, bath: 0, sized: false, hours: "Porch and tile jobs take about 1–2 hours." }
+    porch:    { name: "Porch & Tile Cleaning", short: "Porch & Tile", base: 60, bed: 0, bath: 0, sized: false, hours: "Porch and tile jobs take about 1–2 hours." },
+    addons:   { name: "Add-ons", short: "Add-ons", base: 0, from: 20, bed: 0, bath: 0, sized: false, hours: "Add-on visits take about 1–2 hours." }
   };
   var LABELS = ["", "Service", "Home & add-ons", "Date & time", "Your details", "Review & pay"];
   var SLOTS = ["8:00 AM", "9:00 AM", "10:00 AM", "11:00 AM", "12:00 PM", "1:00 PM", "2:00 PM", "3:00 PM"];
@@ -460,7 +454,7 @@
     checkedList("steamx").forEach(function (c) { total += +c.dataset.price; });
     checkedList("addon").forEach(function (c) { total += +c.dataset.price; });
     if (s.min) total = Math.max(total, s.min);
-    var discount = $("bkRepeat").checked ? Math.round(total * 0.15) : 0;
+    var discount = ($("bkRepeat").checked && !s.pkg) ? Math.round(total * 0.15) : 0;
     return { subtotal: total, discount: discount, total: total - discount };
   }
   function steamText() {
@@ -499,11 +493,13 @@
     $("smAddress").textContent = city + ", " + $("bkState").value + " " + zip;
     $("smDiscountRow").hidden = !(p && p.discount);
     if (p) $("smDiscount").textContent = "−" + money(p.discount);
-    var totalTxt = p ? (state.step === 1 ? "From " + money(p.total) : money(p.total)) : "—";
+    var totalTxt = p ? (state.step === 1 && !s.pkg ? "From " + money(s.from || p.total) : money(p.total)) : "—";
     $("smTotal").textContent = totalTxt;
     $("barTotal").textContent = totalTxt;
     $("payBtn").innerHTML = (p ? "Pay " + money(p.total) + " &amp; book" : "Pay &amp; book") + ' <i class="bi bi-lock-fill"></i>';
     $("durationNote").textContent = s ? s.hours : "Most visits take 2–4 hours.";
+    var upsell = $("bkRepeat").closest(".bk-upsell");
+    if (upsell) upsell.hidden = !!(s && s.pkg);
     var isSteam = state.service === "steam";
     $("steamHead").textContent = isSteam ? "What should we steam-clean?" : "Add steam cleaning (optional)";
     $("steamHint").textContent = isSteam ? "Pick at least one item. Everything is about 98% dry before we leave." : "Steam-clean carpets, curtains or windows on the same visit.";
@@ -534,6 +530,7 @@
     setError(panel, "");
     if (n === 1 && !state.service) { setError(panel, "Please choose a service to continue."); return false; }
     if (n === 2 && state.service === "steam" && !steamText()) { setError(panel, "Pick at least one item to steam-clean."); return false; }
+    if (n === 2 && state.service === "addons" && !addonText() && !steamText()) { setError(panel, "Pick at least one add-on."); return false; }
     if (n === 3) {
       if (!state.date) { setError(panel, "Please pick a day on the calendar."); return false; }
       if (!state.slot) { setError(panel, "Please choose an arrival window."); return false; }
@@ -552,7 +549,7 @@
     var svc = s.name + (st ? " — " + st : "") + (ad ? " + " + ad.toLowerCase() : "");
     $("rvService").textContent = svc;
     $("rvHome").textContent = homeText(true) + " · " + $("bkSize").selectedOptions[0].dataset.label;
-    $("rvDate").textContent = dateText(true) + ($("bkRepeat").checked ? " · repeats every 2 weeks" : "");
+    $("rvDate").textContent = dateText(true) + ($("bkRepeat").checked && !s.pkg ? " · repeats every 2 weeks" : "");
     $("rvAddress").textContent = v("bkStreet") + ", " + v("bkCity") + ", " + $("bkState").value + " " + v("bkZip");
     $("rvContact").textContent = v("bkFirst") + " " + v("bkLast") + " · " + v("bkPhone");
   }

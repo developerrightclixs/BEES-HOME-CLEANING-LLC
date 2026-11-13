@@ -284,3 +284,9 @@
   .bk-success-upsell .btn-bee { width: 100%; }
   .bk-total strong { font-size: 34px; }
 }
+
+/* Booking step 1: service / package groups */
+.bk-group-title { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; font-size: 18px; font-weight: 600; color: var(--ink); margin: 28px 0 14px; }
+.bk-group-title:first-of-type { margin-top: 8px; }
+.bk-group-title span { font-size: 14px; font-weight: 500; color: var(--ink-muted); }
+.bk-option em s { font-style: normal; font-weight: 500; color: var(--ink-muted); margin-left: 4px; font-size: .9em; }

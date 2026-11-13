@@ -129,6 +129,120 @@
     });
   });
 
+  /* ---------- Membership subscribe pop-up ---------- */
+  function esc(t) { var d = document.createElement("div"); d.textContent = t; return d.innerHTML; }
+  function clean(t) { return (t || "").replace(/\s+/g, " ").trim(); }
+
+  var subscribeBtns = Array.prototype.filter.call(
+    document.querySelectorAll(".price-card a.btn-bee, .price-card button.btn-bee"),
+    function (b) { return /subscribe/i.test(b.textContent); }
+  );
+  if (subscribeBtns.length && window.bootstrap) {
+    var modalEl = document.createElement("div");
+    modalEl.className = "modal fade bee-modal";
+    modalEl.id = "membershipModal";
+    modalEl.tabIndex = -1;
+    modalEl.setAttribute("aria-labelledby", "membershipModalTitle");
+    modalEl.setAttribute("aria-hidden", "true");
+    modalEl.innerHTML =
+      '<div class="modal-dialog modal-dialog-centered">' +
+        '<div class="modal-content">' +
+          '<button type="button" class="bee-modal-close" data-bs-dismiss="modal" aria-label="Close"><i class="bi bi-x-lg"></i></button>' +
+          '<span class="eyebrow">Membership</span>' +
+          '<h2 class="h1-bee" id="membershipModalTitle">Start your membership</h2>' +
+          '<p class="body-text mt-2 mb-4">Leave your details and our Findlay team will call you to set up your first visit.</p>' +
+          '<form data-demo-form novalidate>' +
+            '<div class="selected-pill mb-4"><i class="bi bi-patch-check-fill"></i><div><span>You’ve selected</span><strong data-plan-label>—</strong></div></div>' +
+            '<input type="hidden" name="membership" data-plan-input>' +
+            '<div class="mb-3"><label class="form-label" for="mmName">Name</label><input class="form-control" id="mmName" name="name" type="text" placeholder="Your name" autocomplete="name" required><div class="invalid-feedback">Please enter your name.</div></div>' +
+            '<div class="mb-3"><label class="form-label" for="mmEmail">Email</label><input class="form-control" id="mmEmail" name="email" type="email" placeholder="name@example.com" autocomplete="email" required><div class="invalid-feedback">Please enter a valid email.</div></div>' +
+            '<div class="mb-3"><label class="form-label" for="mmPhone">Phone number</label><input class="form-control" id="mmPhone" name="phone" type="tel" placeholder="(555) 555-5555" autocomplete="tel" required><div class="invalid-feedback">Please enter your phone number.</div></div>' +
+            '<div class="mb-4"><label class="form-label" for="mmPlan">Membership plan</label><input class="form-control" id="mmPlan" type="text" readonly data-plan-field></div>' +
+            '<button class="btn-bee btn-primary-bee btn-block" type="submit">Subscribe <i class="bi bi-arrow-right"></i></button>' +
+            '<div class="form-success"><i class="bi bi-check-circle-fill"></i> Thanks! We’ll call you shortly to confirm your membership.</div>' +
+          '</form>' +
+        '</div>' +
+      '</div>';
+    document.body.appendChild(modalEl);
+    var modal = new bootstrap.Modal(modalEl);
+
+    subscribeBtns.forEach(function (btn) {
+      btn.addEventListener("click", function (e) {
+        e.preventDefault();
+        var card = btn.closest(".price-card");
+        var name = clean(card.querySelector(".plan-name") && card.querySelector(".plan-name").textContent);
+        var amtEl = card.querySelector(".price .amt") || card.querySelector(".price");
+        var amt = amtEl ? clean(amtEl.firstChild && amtEl.firstChild.nodeType === 3 ? amtEl.firstChild.textContent : amtEl.textContent) : "";
+        var activeBill = document.querySelector(".billing-toggle button.active");
+        var isAnnual = !!(activeBill && /annual/i.test(activeBill.textContent));
+        if (amtEl && amtEl.getAttribute("data-" + (isAnnual ? "annual" : "monthly"))) amt = amtEl.getAttribute("data-" + (isAnnual ? "annual" : "monthly"));
+        var freq = card.querySelector(".tag");
+        var label = name + (amt ? " — " + amt + " / month" : "") + (freq ? " (" + clean(freq.textContent) + ")" : "");
+        if (isAnnual) label += ", billed yearly";
+        modalEl.querySelector("[data-plan-label]").innerHTML = esc(label);
+        ["[data-plan-input]", "[data-plan-field]"].forEach(function (sel) {
+          var f = modalEl.querySelector(sel); f.value = label; f.defaultValue = label;
+        });
+        var form = modalEl.querySelector("form");
+        form.classList.remove("was-validated");
+        form.querySelector(".form-success").classList.remove("show");
+        modal.show();
+      });
+    });
+    modalEl.addEventListener("shown.bs.modal", function () { modalEl.querySelector("#mmName").focus(); });
+  }
+
+  /* ---------- Buy Package -> contact form with package pre-selected ---------- */
+  document.querySelectorAll(".bundle-card a.btn-bee").forEach(function (a) {
+    if (!/buy package/i.test(a.textContent)) return;
+    var card = a.closest(".bundle-card");
+    var title = card.querySelector("h2, h3");
+    if (title) a.href = "contact.html?package=" + encodeURIComponent(clean(title.textContent)) + "#contact-form";
+  });
+
+  var pkgSelect = document.getElementById("cPackage");
+  if (pkgSelect) {
+    var chosen = new URLSearchParams(location.search).get("package");
+    var note = document.getElementById("pkgSelectedNote");
+    var msgField = document.getElementById("cMsg");
+    var msgLabel = msgField ? document.querySelector('label[for="cMsg"]') : null;
+    var optTag = document.createElement("span");
+    optTag.className = "text-muted-bee fw-normal";
+    optTag.textContent = " (optional)";
+    function showPkgNote() {
+      var opt = pkgSelect.options[pkgSelect.selectedIndex];
+      // Message is optional once a package is picked
+      if (msgField) {
+        msgField.required = !pkgSelect.value;
+        if (pkgSelect.value) {
+          msgField.classList.remove("is-invalid");
+          if (msgLabel && !msgLabel.contains(optTag)) msgLabel.appendChild(optTag);
+          msgField.placeholder = "Anything we should know? (optional)";
+        } else {
+          if (optTag.parentNode) optTag.parentNode.removeChild(optTag);
+          msgField.placeholder = "Tell us about your home and what you need…";
+        }
+      }
+      if (note) {
+        if (pkgSelect.value) {
+          note.querySelector("strong").textContent = clean(opt.textContent);
+          note.hidden = false;
+        } else note.hidden = true;
+      }
+    }
+    if (chosen) {
+      Array.prototype.forEach.call(pkgSelect.options, function (o) {
+        if (o.value.toLowerCase() === chosen.toLowerCase()) pkgSelect.value = o.value;
+      });
+    }
+    if (pkgSelect.value) {
+      Array.prototype.forEach.call(pkgSelect.options, function (o) { o.defaultSelected = o.value === pkgSelect.value; });
+    }
+    pkgSelect.addEventListener("change", showPkgNote);
+    if (pkgSelect.form) pkgSelect.form.addEventListener("reset", function () { setTimeout(showPkgNote, 0); });
+    showPkgNote();
+  }
+
   /* ---------- Forms (front-end demo handling) ---------- */
   document.querySelectorAll("form[data-demo-form]").forEach(function (form) {
     form.addEventListener("submit", function (e) {
